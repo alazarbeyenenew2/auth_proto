@@ -4,7 +4,7 @@ syntax = "proto3";
 import "user.proto";
 
 
-option go_package = "github.com/alazarbeyenenew2/auth/pb;pb";
+option go_package = "github.com/alazarbeyenenew2/auth_proto/pb;pb";
 // define message 
 //Name of the message is UpperCamelCase 
 // Name of the fields lower_snake_case 

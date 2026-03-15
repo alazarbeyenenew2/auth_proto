@@ -393,7 +393,7 @@ const file_auth_proto_rawDesc = "" +
 	"\x05token\x18\x01 \x01(\tR\x05token\x12\x1a\n" +
 	"\bendpoint\x18\x02 \x01(\tR\bendpoint21\n" +
 	"\x05Authz\x12(\n" +
-	"\x05Login\x12\r.LoginRequest\x1a\x0e.LoginResponse\"\x00B(Z&github.com/alazarbeyenenew2/auth/pb;pbb\x06proto3"
+	"\x05Login\x12\r.LoginRequest\x1a\x0e.LoginResponse\"\x00B.Z,github.com/alazarbeyenenew2/auth_proto/pb;pbb\x06proto3"
 
 var (
 	file_auth_proto_rawDescOnce sync.Once

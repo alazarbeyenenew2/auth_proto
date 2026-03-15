@@ -238,7 +238,7 @@ const file_user_proto_rawDesc = "" +
 	"\n" +
 	"\x06UNKOWN\x10\x00\x12\t\n" +
 	"\x05ADMIN\x10\x01\x12\b\n" +
-	"\x04USER\x10\x02B(Z&github.com/alazarbeyenenew2/auth/pb;pbb\x06proto3"
+	"\x04USER\x10\x02B.Z,github.com/alazarbeyenenew2/auth_proto/pb;pbb\x06proto3"
 
 var (
 	file_user_proto_rawDescOnce sync.Once
