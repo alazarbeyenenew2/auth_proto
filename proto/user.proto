@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+
+option go_package = "github.com/alazarbeyenenew2/auth/pb;pb";
+
+message User {
+    string id = 7;
+    enum Types{
+        UNKOWN=0; // default for enum
+        ADMIN = 1;
+        USER =2;
+    }
+
+    // let us define nested message 
+    message Address {
+        string name = 1;
+        int64 zipcode = 2;
+    }
+
+    Types user_type=1;
+    string username =2;
+    string password =3;
+    bool active = 4;
+    repeated Address address =  5;
+    google.protobuf.Timestamp created_at = 6; 
+}
+

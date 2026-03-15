@@ -1,0 +1,63 @@
+// define the syntax  there  proto2 and protoc
+syntax = "proto3";
+
+import "user.proto";
+
+
+option go_package = "github.com/alazarbeyenenew2/auth/pb;pb";
+// define message 
+//Name of the message is UpperCamelCase 
+// Name of the fields lower_snake_case 
+//  some scalar-value data types  
+        // string,bool,bytes,float,double int32,int64,uint64
+        // data types can be user defined enums or other message 
+// then tags are more importan proto buff use it to serialize the message 
+// tags are ineger from 1 to 536970911  ( or 2 ^ 29 -1) except 19000 to 19,999 are reserved for internal server communication 
+// from 1 to 15 takes 1 byte to encode 
+// from 16 to 3-47 3 byte 
+// tag dose not have to be sequancial but should be unique for same level 
+
+
+message LoginRequest{
+    string username = 1;
+    string  password = 2;
+}
+
+message LoginResponse {
+    string token = 1;
+}
+
+// grpc.io
+message RegisterRequest {
+       User user = 1;
+       string admin_token=2;
+}
+
+message  RegisterResponse {
+    User user = 1;
+    string token = 2;
+}
+
+message AuthenticationRequest {
+    string token = 1;
+}
+
+message AuthzResponse {
+  bool authorized = 1;
+}
+
+message AuthorizationRequest {
+    string token = 1;
+    string endpoint =2;
+    // oneof weight {
+    //    double in_kg=3;
+    //    double in_pd=4;
+
+    // }
+}
+
+// authorization services 
+service Authz {
+   // Login authenticates a user and returns a token if successful.
+   rpc Login(LoginRequest) returns (LoginResponse){};
+}
